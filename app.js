@@ -7,4 +7,5 @@ const newItems =_.flattenDeep(items)
 const testItems=[a,b,c];
 const newtestItems=_.flattenDeep(testItems)
 console.log(newItems);
+console.log(newItems);
 console.log(newtestItems);
