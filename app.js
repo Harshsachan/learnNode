@@ -1,10 +1,40 @@
-const http = require('http')
+const {readFile,writeFile} =require('fs').promises
 
-const server = http.createServer((req,res)=>{
-    console.log('request sent');
-    res.end('Hello world listeing on 5002');
-})
 
-server.listen(5002,()=>{
-    console.log('server listening to port 5002');
-})
+// Node naive approach 
+console.log("Entry point");
+ const start = async()=>{
+    try{
+        const first = await readFile('./content/first.txt','utf-8')
+        const second = await readFile('./content/first.txt','utf-8')
+        await writeFile('./content/testhanl.txt',`This is a random generated file`)
+        console.log(first, second)
+    }
+    catch(error){
+        console.log(error)
+    }
+}
+console.log("About to Start");
+start()
+console.log("Ended");
+console.log("Exit point");
+
+
+// Promise created below
+
+
+// const getText = (path) =>{
+//     return new Promise((resolve,reject)=>{
+//         readFile(path,'utf-8',(err,data)=>{
+//             if(err)
+//             {
+//                 reject(err)
+//             }
+//             else{
+//                 resolve(data)
+//             }   
+//         })
+//     })
+// }
+//  getText('./content/first.txt').then((result)=>{console.log(result)}).catch((reject=>{console.log(reject)}))
+
