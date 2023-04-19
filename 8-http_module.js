@@ -1,4 +1,8 @@
 const http =require('http')
+// req has the url which the user is requseting from the browser
+
+// res means the response which we have to output when that particluar url is hit
+
 
 const server = http.createServer((req,res)=>{
     if(req.url==='/')
