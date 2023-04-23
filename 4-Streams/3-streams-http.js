@@ -5,11 +5,11 @@ const text =createReadStream('./content/big.txt','utf-8')
 
 
 http.createServer((req,res)=>{
-    const text =createReadStream('../content/big.txt','utf-8')
+    const text =createReadStream('./content/big.txt','utf-8')
    text.on('open',()=>{
     text.pipe(res)
    })
    text.on('error',(err)=>{
-    res.end("No page found")
+    res.end(err)
    })
     }).listen(5009)
